@@ -31,10 +31,10 @@ Is there an infinite sequence $a_1 < a_2 < \dots$ such that $a_{i+1} - a_i = O(1
 sum of $\frac{1}{a_i}$ is equal to 1?
 -/
 @[category research solved, AMS 11 40]
-theorem erdos_299 : (∃ (a : ℕ → ℕ),
+theorem erdos_299 : answer(False) ↔ (∃ (a : ℕ → ℕ),
     StrictMono a ∧ (∀ n, 0 < a n) ∧
     (fun n ↦ (a (n + 1) : ℝ) - a n) =O[atTop] (1 : ℕ → ℝ) ∧
-    ∀ S : Finset ℕ, ∑ i ∈ S, (1 : ℝ) / a i ≠ 1) ↔ answer(False) := by
+    ∀ S : Finset ℕ, ∑ i ∈ S, (1 : ℝ) / a i ≠ 1) := by
   sorry
 
 /--
@@ -49,7 +49,7 @@ density) then there is a finite $S \subset A$ such that $\sum_{n \in S} \frac{1}
 -/
 @[category research solved, AMS 11 40]
 theorem erdos_299.variants.density : ∀ (A : Set ℕ), 0 ∉ A → 0 < A.upperDensity →
-    ∃ S : Finset ℕ, S.toSet ⊆ A ∧ ∑ n ∈ S, (1 : ℝ) / n = 1 := by
+    ∃ S : Finset ℕ, ↑S ⊆ A ∧ ∑ n ∈ S, (1 : ℝ) / n = 1 := by
   sorry
 
 end Erdos299
